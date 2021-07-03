@@ -18,3 +18,11 @@ export async function getAllArticles() {
   const data = await response.json();
   return data;
 }
+
+export async function getPostBySlug(slug) {
+  const requestUrl = getStrapiURL(`/articles/${slug}`);
+  const response = await fetch(requestUrl);
+  const data = await response.json();
+
+  return data;
+}
