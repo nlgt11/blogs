@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["./components/*"],
-      "lib/*": ["./lib/*"],
-      "pages/*": ["./pages/*"]
+      "components/*": ["./src/components/*"],
+      "lib/*": ["./src/lib/*"],
+      "pages/*": ["./src/pages/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

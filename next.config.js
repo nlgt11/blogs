@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
   images: {
-    domains: ['localhost', process.env.NEXT_PUBLIC_STRAPI_API_URL],
+    domains: ['localhost', 'tn-blog-strapi.herokuapp.com'],
   },
 };
