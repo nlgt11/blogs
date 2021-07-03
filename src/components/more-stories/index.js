@@ -1,4 +1,3 @@
-import { getStrapiMedia } from 'lib/media';
 import PostPreview from 'components/post-preview';
 
 export default function MoreStories({ articles }) {
@@ -12,7 +11,7 @@ export default function MoreStories({ articles }) {
           <PostPreview
             key={article.slug}
             title={article.title}
-            coverImage={getStrapiMedia(article.image)}
+            coverImage={article.image}
             date={article.published_at}
             author={article.author}
             slug={article.slug}

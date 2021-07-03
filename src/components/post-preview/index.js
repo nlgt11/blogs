@@ -3,8 +3,6 @@ import DateFormatter from 'components/date-formatter';
 import CoverImage from 'components/cover-image';
 import Link from 'next/link';
 
-import { getStrapiMedia } from 'lib/media';
-
 export default function PostPreview({
   title,
   coverImage,
@@ -33,7 +31,7 @@ export default function PostPreview({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={getStrapiMedia(author.picture)} />
+      <Avatar name={author.name} picture={author.picture} />
     </div>
   );
 }

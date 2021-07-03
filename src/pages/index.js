@@ -4,8 +4,12 @@ import { getAllArticles } from 'lib/api';
 import Container from 'components/container';
 import Layout from 'components/layout';
 import MoreStories from 'components/more-stories';
+import HeroPost from 'components/hero-post';
 
 export default function Home({ articles }) {
+  const heroPost = articles[0];
+  const morePosts = articles.slice(1);
+
   return (
     <Layout>
       <Head>
@@ -18,7 +22,17 @@ export default function Home({ articles }) {
           </h1>
           <div>TN's personal blog 👋</div>
         </section>
-        <MoreStories articles={articles} />
+        {heroPost && (
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.image}
+            date={heroPost.published_at}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.description}
+          />
+        )}
+        {morePosts.length > 0 && <MoreStories articles={morePosts} />}
       </Container>
     </Layout>
   );
