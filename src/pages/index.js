@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { getAllArticles } from 'lib/api';
 import Container from 'components/container';
 import Layout from 'components/layout';
+import MoreStories from 'components/more-stories';
 
 export default function Home({ articles }) {
   return (
@@ -17,11 +18,8 @@ export default function Home({ articles }) {
           </h1>
           <div>TN's personal blog 👋</div>
         </section>
+        <MoreStories articles={articles} />
       </Container>
-
-      {articles.map((article) => (
-        <div key={article.id}>{article.title}</div>
-      ))}
     </Layout>
   );
 }
