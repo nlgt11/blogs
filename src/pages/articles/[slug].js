@@ -67,21 +67,12 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const articles = await getAllArticles();
 
-  const a = {
-    paths: articles.map((article) => ({
-      params: {
-        slug: article.slug,
-      },
-    })),
-    fallback: false,
-  };
-
   return {
     paths: articles.map((article) => ({
       params: {
         slug: article.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
